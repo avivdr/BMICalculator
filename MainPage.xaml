@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BMICalculator.MainPage">
+
+    <VerticalStackLayout>
+        <Label 
+            x:Name="Main_Lbl" Margin="20, 75"
+            HorizontalOptions="Center"/>
+
+        <Label
+            HorizontalTextAlignment="Center"
+            Text="{Binding 
+                Source={x:Reference Gender},
+                Path = IsChecked,
+                StringFormat='Gender: {0:F1}'
+            }"/>
+        <CheckBox 
+            x:Name="Gender" Margin="20"                  
+            HorizontalOptions="Center"/>
+        <Label
+            HorizontalTextAlignment="Center"
+            Text="{Binding 
+                Source={x:Reference Weight},
+                Path = Value,
+                StringFormat='Weight: {0:F1}kg'
+            }"/>
+        <Stepper 
+            x:Name="Weight"
+            Minimum="0"
+            Maximum="200"
+            Margin="20"
+            HorizontalOptions="Center"/>
+
+        <Label 
+            HorizontalTextAlignment="Center"
+            Text="{Binding Source={x:Reference HeightSlider}, Path = Value, StringFormat='Height: {0:F1}cm'}"/>
+        <Slider 
+            Margin="20" 
+            x:Name="HeightSlider" 
+            Minimum="0" 
+            Maximum="250" 
+            WidthRequest="500"/>
+
+
+        <Button 
+            x:Name="btn" 
+            Margin="20"
+            Text="Calculate"
+            HorizontalOptions="Center"
+            Clicked="btn_Clicked"/>
+
+
+    </VerticalStackLayout>
+
+</ContentPage>
