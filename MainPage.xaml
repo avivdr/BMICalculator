@@ -4,20 +4,30 @@
              x:Class="BMICalculator.MainPage">
 
     <VerticalStackLayout>
-        <Label 
-            x:Name="Main_Lbl" Margin="20, 75"
-            HorizontalOptions="Center"/>
-
+        <Border
+            x:Name="MainLblBorder"
+            StrokeShape="RoundRectangle 7"
+            HorizontalOptions="Center"    
+            Margin="20, 75"
+            BackgroundColor="Green"
+            Padding="5, 3"
+            >
+            <Label 
+                x:Name="Main_Lbl"        
+                Text="BMI: N/A"
+                Padding="2"
+                />
+        </Border>
         <Label
             HorizontalTextAlignment="Center"
-            Text="{Binding 
-                Source={x:Reference Gender},
-                Path = IsChecked,
-                StringFormat='Gender: {0:F1}'
-            }"/>
+            Text = "Gender: Male"
+            x:Name="GenderLbl"
+            />
         <CheckBox 
-            x:Name="Gender" Margin="20"                  
-            HorizontalOptions="Center"/>
+            x:Name="Gender" 
+            Margin="20"                  
+            HorizontalOptions="Center"
+            CheckedChanged="Gender_Changed"/>
         <Label
             HorizontalTextAlignment="Center"
             Text="{Binding 
@@ -29,6 +39,7 @@
             x:Name="Weight"
             Minimum="0"
             Maximum="200"
+            Value="60"
             Margin="20"
             HorizontalOptions="Center"/>
 
@@ -40,6 +51,7 @@
             x:Name="HeightSlider" 
             Minimum="0" 
             Maximum="250" 
+            Value="170"
             WidthRequest="500"/>
 
 
