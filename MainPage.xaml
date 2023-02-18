@@ -9,7 +9,7 @@
             StrokeShape="RoundRectangle 7"
             HorizontalOptions="Center"    
             Margin="20, 75"
-            BackgroundColor="Green"
+            BackgroundColor="Gray"
             Padding="5, 3"
             >
             <Label 
